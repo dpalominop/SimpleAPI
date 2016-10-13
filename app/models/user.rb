@@ -6,5 +6,9 @@ class User < ApplicationRecord
 		:confirmable
 
 	attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-	
+
+	def skip_confirmation!
+		self.confirmed_at = Time.now
+	end
+
 end
