@@ -5,7 +5,7 @@ class User < ApplicationRecord
 		:recoverable, :rememberable, :trackable, :validatable,
 		:confirmable
 
-	attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+	attr_accessor :name, :email, :password, :password_confirmation, :remember_me
 
 	def skip_confirmation!
 		self.confirmed_at = Time.now
